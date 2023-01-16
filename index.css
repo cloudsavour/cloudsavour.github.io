@@ -1,0 +1,35 @@
+Body{
+Font-family:sans;
+margin:0;
+background:url("https://i.328888.xyz/2023/01/03/tmTYJ.jpeg") 100% bottom no-repeat;
+Background-size:contain;
+}
+mask{
+Background:rgba(0,0,0,0.3);
+Width:32vw;
+height:100vh;
+Position:fixed;
+Left:0;
+top:0vh;
+}
+board{
+Width:24vw;
+height:64vh;
+Padding:0 5vw;
+Margin:18vh 0;
+Position:fixed;
+Left:0;
+top:0vh;
+Display:flex;
+Flex-direction:column-reverse;
+overflow:auto;
+}
+board div{
+color:rgba(255,255,232,1);;
+Background:rgba(0,0,0,0.5);
+font-size:0.8rem;
+line-height:1.2rem;
+padding:0.8rem 1rem;
+border-radius:10px;
+margin-bottom:1rem;
+}
