@@ -1,14 +1,16 @@
-<div id="container"></div>
-<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
-<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+<div id="gitalk-container"></div>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+<script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+">
 <script>
-var gitment = new Gitment({
-  owner: 'cloudsavour', 
-  repo: 'comments',
-  oauth: {
-    client_id: 'a868836541c9562ddecd',
-    client_secret: 'a774f8f98c59cf93f9b7c437ea4bb8ebf828d7e8', 
-  },
+var gitalk = new Gitalk({
+  clientID: 'a868836541c9562ddecd',
+  clientSecret: 'a774f8f98c59cf93f9b7c437ea4bb8ebf828d7e8',
+  repo: 'cloudsavour.github.io',
+  owner: 'cloudsavour',
+  admin: 'cloudsavour',
+  id: location.pathname,      // 如果要每篇文章都使用独立评论 需要改为id: location.hash
+  distractionFreeMode: false  // 无干扰模式
 })
-gitment.render('container')
+gitalk.render('gitalk-container')
 </script>
