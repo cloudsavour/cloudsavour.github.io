@@ -21,19 +21,19 @@ function isMobile() {
 var mobile_flag = isMobile();
 if (mobile_flag) {
 var script = document.createElement('script');
-script.src = document.title+"(mobile).js";
+script.src = '/js/'+document.title+"(mobile).js";
 document.head.appendChild(script);                                 
 var link= document.createElement('link');
 link.rel="stylesheet";
-link.href= document.title+"(mobile).css";
+link.href= '/css/'+document.title+"(mobile).css";
 document.head.appendChild(link);
 }else{
 var script = document.createElement('script');
-script.src = document.title+"(pc).js";
+script.src = '/js/'+document.title+"(pc).js";
 document.head.appendChild(script);                                 
 var link= document.createElement('link');
 link.rel="stylesheet";
-link.href= document.title+"(pc).css";
+link.href= '/css/'+document.title+"(pc).css";
 document.head.appendChild(link);
 }
 
