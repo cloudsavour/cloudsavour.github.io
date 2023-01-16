@@ -9,7 +9,8 @@ var gitalk = new Gitalk({
   repo: 'cloudsavour.github.io',
   owner: 'cloudsavour',
   admin: 'cloudsavour',
-  id: location.pathname,      // 如果要每篇文章都使用独立评论 需要改为id: location.hash
+  proxy:'https://cors-server-ecru.vercel.app/github_access_token',
+id: location.pathname,      // 如果要每篇文章都使用独立评论 需要改为id: location.hash
   distractionFreeMode: false  // 无干扰模式
 })
 gitalk.render('gitalk-container')
