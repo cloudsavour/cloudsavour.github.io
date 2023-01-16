@@ -1,0 +1,46 @@
+<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0">
+<style>
+
+*{
+}
+</style>
+
+
+<body onload="init();">
+<mask></mask>
+<board>
+<div>empty</div>
+</board>
+
+
+<table style='right:0;top:0;position:fixed'>
+    <tr>
+        <td>ID</td>
+        <td><textarea type="text" id="name"/></textarea></td>
+    </tr>
+    <tr>
+        <td>comment</td>
+        <td><textarea type="text" id="memo"/></textarea></td>
+    </tr>
+    <tr>
+       <td> <input type="button" value="ok" onclick="saveData();"/></td>
+    </tr>
+</table>
+
+<table id="datatable" border="1"  style='right:0;bottom:0vh;position:fixed;display:none'>
+</table>
+
+
+<script>
+    function saveData(){
+        var name=document.getElementById('name').value;
+        var memo=document.getElementById('memo').value;
+        var div=document.createElement('div');
+        div.innerHTML = name + '：' + memo;
+        var board=document.getElementsByTagName('board')[0];
+        board.appendChild(div);
+    }
+
+
+</script>
+</body>
