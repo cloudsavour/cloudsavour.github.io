@@ -1,13 +1,10 @@
 Body{
+Body{
+Font-family:sans;
 margin:0;
-Background:black;
-}
-Img{
-Position:fixed;
-Bottom:0;
-Width:100vw;
-object-fit:contain;
-
+background:url("https://i.328888.xyz/2023/01/03/tmTYJ.jpeg") 100% bottom no-repeat;
+Background-size:contain;
+background-color:black;
 }
 board{
 Width:84vw;
