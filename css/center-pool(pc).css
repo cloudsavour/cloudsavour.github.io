@@ -5,12 +5,11 @@ background:url("https://i.328888.xyz/2023/01/03/tmTYJ.jpeg") 100% bottom no-repe
 Background-size:cover;
 }
 ::-webkit-scrollbar{
-width: 20px;
-height: 20px;
+width: 14px;
 background-color:transparent;
 }
 ::-webkit-scrollbar-thumb{
-border-radius: 10px;
+border-radius: 7px;
 background-color:rgba(31,202,122,0.3);
 }
 ::-webkit-scrollbar-thumb:hover{
@@ -18,7 +17,7 @@ background:rgba(31,202,122,0.9);
 }
 mask{
 Background:rgba(0,0,0,0.3);
-Width:32vw;
+Width:34vw;
 height:100vh;
 Position:fixed;
 Left:0;
