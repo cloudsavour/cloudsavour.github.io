@@ -2,8 +2,8 @@
 <head>
     <title>Cloud Savour</title>
     <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
-    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.3/jquery.js"></script>
-    <link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.css">
+    <script src='https://cdn.bootcdn.net/ajax/libs/jquery/3.6.3/jquery.js'></script>
+    <link rel="stylesheet" href='https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.css'>
     <style>
         body{
             margin:0;
@@ -52,9 +52,9 @@ background:rgb(18, 110, 146);
             position: fixed;
             bottom:-24vh;
             display:flex;
-            width:50vw;
+            width:60vw;
             height:24vh;
-            padding:0rem 25rem 2rem 25rem;
+            padding:0rem 20vw 2rem 20vw;
             justify-content:space-around;
             box-shadow:rgba(81, 74, 66, 0.3) 2px 0px 12px 2px;
             background-color: rgba(251, 244, 236, 0.913);
@@ -71,6 +71,7 @@ background:rgb(18, 110, 146);
            
         }
         div#bottom div span{
+          display: block;
             font-family: 'YouYuan','Microsoft Yahei';
             font-weight: 700;
             font-size: 1.2rem;
@@ -79,13 +80,11 @@ background:rgb(18, 110, 146);
             margin:auto auto 0rem auto;
         }
         div#bottom div img{
-            width:6rem;
-            height:6rem;
+            width:4rem;
+            height:4rem;
             border-radius:50%;
             margin:1rem auto auto auto;
             object-fit: cover;
-
-
 }
 
 div.nav{
@@ -144,9 +143,15 @@ div#right-nav tip{
     right: 3rem;
 }
 i:hover tip{
-display:inline-block;
+display:block;
 }
-
+div#bottom div:hover tip{
+display:block;
+position: ;
+top: -10vh;
+left: 10vw;
+width: 6rem;
+}
 /*waterfull*/
 div#main{
     background-color: rgb(254, 248, 250);
@@ -212,7 +217,7 @@ z-index:3;
 opacity: 0;
 line-height: 1.8rem;
 overflow-wrap: break-word;
-overflow: scroll;
+overflow-y: scroll;
 }
 button#dropdown{
   font-size: 1rem;
@@ -225,6 +230,12 @@ button#dropdown{
     border-radius:50px;
     border:none;
     box-shadow:rgba(0, 0, 0, 0.4) 4px 4px 6px;
+}
+#icon img{
+margin-top: -2rem;
+}
+#icon:hover img{
+  margin-top: auto;
 }
         </style>
 
@@ -241,8 +252,8 @@ button#dropdown{
 
 
         <div id='head'>
-            <tab style="margin-left:2vw"><img style='width: 2rem;' src='http://47.113.199.87/wp-content/uploads/2023/01/hung-cs.png'></tab>
-            <tab>Hi! Welcome to cloud world ฅ՞•ﻌ•՞ ต</tab>
+            <tab style="margin-left:2vw" id="icon"><img style='width: 2rem;' src='http://47.113.199.87/wp-content/uploads/2023/01/hung-cs.png'></tab>
+            <tab>Welcome to Cloud world ฅ՞•ﻌ•՞ ต</tab>
             <tab style="margin-right:1.5vw">©云品</tab>
         </div>
 
@@ -250,7 +261,7 @@ button#dropdown{
         
         <div id="main">
             <div id="introduction">
-              <p>示例文本xsef
+              <p>xsef
                 hnhnhnjesefhnhnhnjercrcsefhnhnhnj
                 ercrcsefhnhnhnjercrcsefhnhnhnjercrcsefhnhnhnjercr
                 csefhnhnhnjercrcsefhnhnhnjercrcsefh
@@ -366,16 +377,18 @@ button#dropdown{
         <div id='bottom'>
             <div><span>猫圈</span>
                 <img src='https://cdn.pixabay.com/photo/2020/04/21/21/38/cat-family-5074732_960_720.jpg'>
-            </div>
-            <div><span>猫眼</span>
+                <tip>养猫那些事</tip></div>
+            
+
+            <div><span>猫眼 </span>
                 <img src='https://cdn.pixabay.com/photo/2018/06/18/19/30/cat-3483146_960_720.jpg'>
-            </div>
+           <tip>与有猫人士的视频互动养猫</tip></div>
+            
+
             <div><span>预留</span>
                 <img src='https://s1.ax1x.com/2023/01/18/pS3YuAP.png'>
             </div>
-            <div><span>预留</span>
-                <img src='https://s1.ax1x.com/2023/01/18/pS3YuAP.png'>
-            </div>
+           
         </div>
 
         
@@ -493,4 +506,3 @@ button#dropdown{
     </script>
 
 </html>
-
