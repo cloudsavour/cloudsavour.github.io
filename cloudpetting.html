@@ -1,0 +1,508 @@
+<html>
+<head>
+    <title>Cloud Savour</title>
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+    <script src='https://cdn.bootcdn.net/ajax/libs/jquery/3.6.3/jquery.js'></script>
+    <link rel="stylesheet" href='https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.css'>
+    <style>
+        body{
+            margin:0;
+            color:#333;
+            font-family: sans-serif;
+            display: flex;
+            flex-direction: column;
+            background: transparent;
+            overflow-x: hidden;
+            background-color: rgba(90, 139, 167, 0.3);
+          }
+::-webkit-scrollbar{
+border-radius: 6px;
+width: 12px;
+height: 20px;
+background:white;
+}
+::-webkit-scrollbar-thumb{
+border-radius: 6px;
+background-color:rgba(90, 139, 167, 0.9);
+}
+::-webkit-scrollbar-thumb:hover{
+background:rgb(18, 110, 146);
+}
+        div#head{
+            position: sticky;
+            top:0;
+            width:100vw;
+            height:6vh;
+            display:flex;
+            padding:0rem 0rem;
+            background-color: rgba(255, 255, 255,0.24);
+            box-shadow:rgba(255, 255, 255,0.9) 0px 0px 10px;
+            z-index: 2;
+        }
+        
+    
+        div#head tab{
+            margin:auto;
+            display:block;
+            font-size:1rem;
+            color:white;
+            text-shadow:rgba(0, 0,0,0.4) 2px 2px 4px;
+        }
+        div#bottom{
+            position: fixed;
+            bottom:-24vh;
+            display:flex;
+            width:60vw;
+            height:24vh;
+            padding:0rem 20vw 2rem 20vw;
+            justify-content:space-around;
+            box-shadow:rgba(81, 74, 66, 0.3) 2px 0px 12px 2px;
+            background-color: rgba(251, 244, 236, 0.913);
+        }
+        div#bottom:hover{
+            bottom:0rem;
+            transition: 0.6s;
+        }
+        div#bottom div{
+            width:10rem;
+            height:12rem;
+            display: flex;
+            flex-direction: column;
+           
+        }
+        div#bottom div span{
+          display: block;
+            font-family: 'YouYuan','Microsoft Yahei';
+            font-weight: 700;
+            font-size: 1.2rem;
+            color:#9AA6C1;
+            text-align: center;
+            margin:auto auto 0rem auto;
+        }
+        div#bottom div img{
+            width:4rem;
+            height:4rem;
+            border-radius:50%;
+            margin:1rem auto auto auto;
+            object-fit: cover;
+}
+
+div.nav{
+    position:fixed;
+    left:0;
+    bottom:1rem;
+    height:10rem;
+    width:3rem;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content:space-around;
+}
+div#right-nav{
+    left:auto;
+    right:0;
+}
+div.nav button{
+    font-size: 1.2rem;
+    background-color: rgb(158, 108, 124);
+    text-align: center;
+    line-height:3rem;
+    height:3rem;
+    width:3rem;
+    border-radius:50%;
+    border:none;
+    box-shadow:rgba(0, 0, 0,0.4) 4px 4px 6px;
+}
+div.nav button a{ 
+    color:blanchedalmond;
+    text-decoration: none;
+}
+i{
+    color: antiquewhite !important;
+   
+}
+
+tip{
+display:none;
+height:auto;
+width:2.4rem;
+font-family:'Microsoft Yahei',serif;
+font-size:1rem;
+background:#f1f1f3;
+color:#6483B0;
+padding:0.6rem 0.8rem;
+border-radius:10px;
+box-shadow: 5px 5px 15px 0 rgba(0, 0, 0, 0.2);
+z-index:3;
+position: relative;
+top: -2rem;
+left: 3rem;
+}
+div#right-nav tip{
+    left:auto;
+    right: 3rem;
+}
+i:hover tip{
+display:block;
+}
+div#bottom div:hover tip{
+display:block;
+position: ;
+top: -10vh;
+left: 10vw;
+width: 6rem;
+}
+/*waterfull*/
+div#main{
+    background-color: rgb(254, 248, 250);
+    border-radius: 4.8vh;
+    margin-top: -4.8vh;
+    width: 100vw;
+  padding:2rem 0rem;
+}
+div#introduction{
+  display: block !important;
+    text-align:center;
+    color: rgb(67, 64, 59);
+}
+div#main>*{
+  display: none;
+          margin: 0;
+          padding: 0;
+      }
+      div#main #container{
+          position: relative;
+          padding:0 10vw;
+      }
+      div#main .box{
+          float: left;/* 给每个存放照片box设置为浮动元素，让所有的图片浮动到网页的第一行*/
+          padding: 1vw;
+      }
+      div#main .box-img{
+          width: 38vw;
+          padding: 0px;
+          border: 0px solid #ccc;
+          box-shadow: 0 0 5px #ccc;
+          border-radius: 5px;
+      }
+      div#main .box-img img {
+          width: 100%;
+          height: auto;
+      }
+
+
+div.container{
+    display: flex;
+            position:fixed;
+            height: 100vh;
+            width: 100vw;    
+            left: 0;
+            top: 0;
+            z-index:-1;
+        }
+        
+#details{
+width:32vw;
+height:40vh;
+margin:auto;
+font-family:'Microsoft Yahei',serif;
+font-size:1rem;
+background:#f1f1f3;
+color:#6483B0;
+padding:2rem 4rem;
+text-align: center;
+border-radius:30px;
+box-shadow: 5px 5px 15px 0 rgba(0, 0, 0, 0.2);
+z-index:3;
+opacity: 0;
+line-height: 1.8rem;
+overflow-wrap: break-word;
+overflow-y: scroll;
+}
+button#dropdown{
+  font-size: 1rem;
+    background-color: rgb(65, 54, 52);
+    color:blanchedalmond;
+    text-align: center;
+    line-height:2rem;
+    height:2rem;
+    width: 6rem;
+    border-radius:50px;
+    border:none;
+    box-shadow:rgba(0, 0, 0, 0.4) 4px 4px 6px;
+}
+#icon img{
+margin-top: -2rem;
+}
+#icon:hover img{
+  margin-top: auto;
+}
+        </style>
+
+
+    </head>
+    <body>
+
+
+<mask id="load-tip" style="display:flex;flex-direction:column;position:fixed;width:100vw;height:100vh;left:0;top:0;margin:0;background:#2c9ecc;z-index:5;">
+    <img style="margin:28vh auto 0 auto;" src="https://img.zcool.cn/community/0142cc5c25d0eaa80121df90b84263.gif">
+    <div style="font-family:Arial;font-size:4rem;margin:-10vh auto auto auto;padding-left: 3rem;">Loading …</div>
+    </mask>
+
+
+
+        <div id='head'>
+            <tab style="margin-left:2vw" id="icon"><img style='width: 2rem;' src='http://47.113.199.87/wp-content/uploads/2023/01/hung-cs.png'></tab>
+            <tab>Welcome to Cloud world ฅ՞•ﻌ•՞ ต</tab>
+            <tab style="margin-right:1.5vw">©云品</tab>
+        </div>
+
+        <img style='height:74vh;width:100vw;object-fit:cover;' src="http://47.113.199.87/wp-content/uploads/2023/01/QQ图片20230115161123.jpg">
+        
+        <div id="main">
+            <div id="introduction">
+              <p>xsef
+                hnhnhnjesefhnhnhnjercrcsefhnhnhnj
+                ercrcsefhnhnhnjercrcsefhnhnhnjercrcsefhnhnhnjercr
+                csefhnhnhnjercrcsefhnhnhnjercrcsefh
+                nhnhnjercrcsefhercrcsefhnhnhnjercrcrcrc</p>
+                <button id="dropdown">猫遇 <i class="fa fa-coffee" aria-hidden="true"></i></button>
+            </div>
+           
+            <div id="container">
+                <div class="box">
+                  <div class="box-img">
+                    <img src="https://cdn.pixabay.com/photo/2022/01/29/10/59/cat-6977088_960_720.jpg" alt="">
+                  </div>
+                </div>
+                <div class="box">
+                  <div class="box-img">
+                    <img src="https://cdn.pixabay.com/photo/2014/04/13/20/49/cat-323262_960_720.jpg" alt="">
+                  </div>
+                </div>
+                <div class="box">
+                  <div class="box-img">
+                    <img src="https://cdn.pixabay.com/photo/2017/07/25/01/22/cat-2536662_960_720.jpg" alt="">
+                  </div>
+                </div>
+                <div class="box">
+                  <div class="box-img">
+                    <img src="https://images.pexels.com/photos/39317/chihuahua-dog-puppy-cute-39317.jpeg" alt="">
+                  </div>
+                </div>
+                <div class="box">
+                  <div class="box-img">
+                    <img src="https://images.pexels.com/photos/1056252/pexels-photo-1056252.jpeg" alt="">
+                  </div>
+                </div>
+                <div class="box">
+                  <div class="box-img">
+                    <img src="https://images.pexels.com/photos/731022/pexels-photo-731022.jpeg" alt="">
+                  </div>
+                </div>
+                <div class="box">
+                  <div class="box-img">
+                    <img src="https://images.pexels.com/photos/1009922/pexels-photo-1009922.jpeg" alt="">
+                  </div>
+                </div>
+                <div class="box">
+                  <div class="box-img">
+                    <img src="https://images.pexels.com/photos/416160/pexels-photo-416160.jpeg" alt="">
+                  </div>
+                </div>
+                <div class="box">
+                  <div class="box-img">
+                    <img src="https://images.pexels.com/photos/1314550/pexels-photo-1314550.jpeg" alt="">
+                  </div>
+                </div>
+                <div class="box">
+                  <div class="box-img">
+                    <img src="https://images.pexels.com/photos/1440406/pexels-photo-1440406.jpeg" alt="">
+                  </div>
+                </div>
+                <div class="box">
+                    <div class="box-img">
+                      <img src="https://images.pexels.com/photos/96938/pexels-photo-96938.jpeg" alt="">
+                    </div>
+                  </div>
+                  <div class="box">
+                    <div class="box-img">
+                      <img src="https://images.pexels.com/photos/2173872/pexels-photo-2173872.jpeg" alt="">
+                    </div>
+                  </div>
+                  <div class="box">
+                    <div class="box-img">
+                      <img src="https://images.pexels.com/photos/104827/cat-pet-animal-domestic-104827.jpeg" alt="">
+                    </div>
+                  </div>
+                  <div class="box">
+                    <div class="box-img">
+                      <img src="https://cdn.stocksnap.io/img-thumbs/960w/squirrel-nature_KCUEBZJ8DB.jpg" alt="">
+                    </div>
+                  </div>
+                  <div class="box">
+                    <div class="box-img">
+                      <img src="https://images.pexels.com/photos/162174/cat-british-shorthair-mieze-blue-eye-162174.jpeg" alt="">
+                    </div>
+                  </div>
+                  <div class="box">
+                    <div class="box-img">
+                      <img src="https://cdn.stocksnap.io/img-thumbs/960w/dog-cat_YNI4E0XAAS.jpg" alt="">
+                    </div>
+                  </div>
+                  <div class="box">
+                    <div class="box-img">
+                      <img src="https://cdn.stocksnap.io/img-thumbs/960w/squirrel-animal_PO9A8TGABL.jpg" alt="">
+                    </div>
+                  </div>
+                  <div class="box">
+                    <div class="box-img">
+                      <img src="https://cdn.stocksnap.io/img-thumbs/280h/NLFVPHAFCX.jpg" alt="">
+                    </div>
+                  </div>
+                  <div class="box">
+                    <div class="box-img">
+                      <img src="https://images.unsplash.com/photo-1474511320723-9a56873867b5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8YW5pbWFsfGVufDB8fDB8fA%3D%3D&w=1000&q=80" alt="">
+                    </div>
+                  </div>
+                  <div class="box">
+                    <div class="box-img">
+                      <img src="https://cdn.stocksnap.io/img-thumbs/960w/animal-winter_EN4NGEYAFD.jpg" alt="">
+                    </div>
+                  </div>
+              </div>
+              
+        </div>
+
+        <div id='bottom'>
+            <div><span>猫圈</span>
+                <img src='https://cdn.pixabay.com/photo/2020/04/21/21/38/cat-family-5074732_960_720.jpg'>
+                <tip>养猫那些事</tip></div>
+            
+
+            <div><span>猫眼 </span>
+                <img src='https://cdn.pixabay.com/photo/2018/06/18/19/30/cat-3483146_960_720.jpg'>
+           <tip>与有猫人士的视频互动养猫</tip></div>
+            
+
+            <div><span>预留</span>
+                <img src='https://s1.ax1x.com/2023/01/18/pS3YuAP.png'>
+            </div>
+           
+        </div>
+
+        
+<div id="left-nav" class="nav">
+    <button id="home"><a href=''><i class="fa fa-home" aria-hidden="true"><tip>小窝</tip></i></a></button>
+    <button id="calendar"><a href=''><i class="fa fa-calendar" aria-hidden="true"><tip>日历</tip></i></a></button>
+    <button id="notice"><i class="fa fa-bullhorn" aria-hidden="true"><tip>声明</tip></i></button>
+</div>
+
+<div id="right-nav" class="nav">
+    <button id="achieve"><a href=''><i class="fa fa-calendar-check-o" aria-hidden="true"><tip>每日</tip></i></a></button>
+    <button id="wish"><a href=''><i class="fa fa-flag" aria-hidden="true"><tip>愿望清单</tip></i></a></button>
+    <button id="map"><a href=''><i class="fa fa-map-marker" aria-hidden="true"><tip>世界</tip></i></a></button>
+</div>
+
+
+</body>
+
+
+<div class="container">
+    <div id="details"></div>
+</div>
+<script>
+    $('#notice').bind('click',function(){
+        $('#details').css('transition','1s');
+        $('#details').css('opacity','1');
+        $('.container').css('z-index','3');
+        $('#details').html('<h1>版权声明 Copyright Notice</h1><p>本页面加载动图来源：奔跑的猫-原创设计作品-站酷（ZCOOL）-欢腾的包子 https://www.zcool.com.cn/work/ZMzI0NzYzMDA=.html<br>本页面展示图片的来源网站：<br>https://pixabay.com/zh/<br>https://www.pexels.com/<br>https://stocksnap.io/<br>https://unsplash.com/<br></p>')
+    
+        $('.container').bind('click',function(){
+        $('.container').css('z-index','-1');
+        $('#details').css('opacity','0');
+    })
+
+});   
+</script>
+<script>
+    $('#dropdown').bind('click',function(){
+      $(this).hide();
+        $('div#main>*').css('display','block');
+        $('html,body').animate({scrollTop:$('#container').offset().top},1200);
+        })
+</script>
+
+
+
+<script>
+    window.onload = function() {
+    imgLocation('container', 'box')
+  }
+  
+  // 获取到当前有多少张图片要摆放
+  function imgLocation(parent, content) {
+    // 将containerd下所有的内容全部取出
+    var cparent = document.getElementById(parent)  //获取container盒子的标签
+    var ccontent = getChildElemnt(cparent, content)//图片时放在container盒子里的box盒子里的，因此我们还需要定义一个函数getChildElemnt（）获取出box里的图片
+    
+    var imgWidth = ccontent[0].offsetWidth//获取css中我们给每张图片设置的固定宽度
+    var num = Math.floor(document.documentElement.clientWidth / imgWidth) //获取浏览器body的宽度计算最多能放几张我们的图片
+    cparent.style.cssText = `width: ${imgWidth * num} px`
+  
+    //摆放图片
+    var BoxHeightArr = [] 
+    for (var i = 0; i < ccontent.length; i++) { 
+      if (i < num) {  //我们先将第一行摆满
+        BoxHeightArr[i] = ccontent[i].offsetHeight //这里我们通过BoxHeightArr[]数组存放每列的高度
+      } else { //剩下的图片我们依次次优先选择摆在高度最低的一列后面
+        var minHeight = Math.min.apply(null, BoxHeightArr) //通过将Math.min()中求最小值的方法应用到数组中，求出高度最低的列
+        var minIndex = getMinHeightLocation(BoxHeightArr, minHeight) //确定了高度最低的列后我们就差求出列的位置了,我们通过编写一个函数实现
+
+        //最后将我们的图片相对于container盒子进行定位放在每一列下就可以啦
+        ccontent[i].style.position = 'absolute'
+        ccontent[i].style.top = minHeight +'px'
+        ccontent[i].style.left =ccontent[minIndex].offsetLeft + 'px'
+        //最后不忘记跟新每一列的高度哦
+        BoxHeightArr[minIndex] =BoxHeightArr[minIndex] + ccontent[i].offsetHeight
+
+      }
+    }
+    // console.log(BoxHeightArr);
+  }
+  
+  
+  function getChildElemnt(parent, content) {
+    const contentArr = []
+    const allContent = parent.getElementsByTagName('*')//通过内置函数getElementsByTagName()将container中的所有元素取出来
+    // console.log(allContent);
+    for (var i = 0; i < allContent.length; i++) {//但是container中所有的元素中我们只需要的是所有的img，为此我们写个for循环将所用img筛选出来存放在一个数组中
+      if (allContent[i].className == content) {
+        contentArr.push(allContent[i])
+      }
+    }
+    // console.log(contentArr);
+    return contentArr
+  }
+  //获取列最高度最小列的位置下标函数
+  function getMinHeightLocation(BoxHeightArr, minHeight) {
+    for (var i in BoxHeightArr) {
+      if (BoxHeightArr[i] === minHeight) {
+        return i
+      }
+    }
+  }
+</script>
+
+<script>
+    window.onload = function () {
+    setTimeout(function () {
+    $('#load-tip').css({"-webkit-transition":"3s"});
+    $('#load-tip').css({"transition":'3s'});
+    $('#load-tip').css({"z-index":'-1'});
+    $('#load-tip').css({"opacity":'0'});
+    }, 1000)
+    }
+    </script>
+
+</html>
